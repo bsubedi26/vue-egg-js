@@ -9,12 +9,12 @@
           mode="horizontal"
           :router="true"
           >
-       <el-menu-item index="List" :route="{name: 'AllList'}">接口列表</el-menu-item>
-       <el-menu-item index="Create" :route="{name: 'Create'}">创建接口</el-menu-item>
-       <el-menu-item index="Document" :route="{name: 'Document'}">接口文档</el-menu-item>
-       <el-menu-item index="Stat" :route="{name: 'Stat'}">数据统计</el-menu-item>
-       <!-- 文档是外链，不用触发系统自身路由 -->
-       <li class="el-menu-item" @click="showDocs">使用教程</li>
+       <el-menu-item index="List" :route="{name: 'AllList'}">All List</el-menu-item>
+       <el-menu-item index="Create" :route="{name: 'Create'}">Create</el-menu-item>
+       <el-menu-item index="Document" :route="{name: 'Document'}">Document</el-menu-item>
+       <el-menu-item index="Stat" :route="{name: 'Stat'}">Data Statistics</el-menu-item>
+       <!-- document is outside the chain, do not trigger the system itself routing -->
+       <li class="el-menu-item" @click="showDocs">Tutorial/Docs</li>
       </el-menu>
     </el-col>
     <el-col :span="0">
@@ -33,7 +33,8 @@ export default {
   },
   data () {
     return {
-      appName: config.appName
+      appName: 'Menu'
+      // appName: config.appName
     }
   },
   methods: {

@@ -14,7 +14,7 @@ export default {
   props: {
     placeholder: {
       type: String,
-      default: '请输入条件'
+      default: 'Please enter the conditions'
     },
     size: {
       type: String

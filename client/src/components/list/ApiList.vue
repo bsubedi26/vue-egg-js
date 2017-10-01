@@ -6,7 +6,7 @@
       </li>
       <template v-if="groupId">
         <li class="add-api" @click="createApi">
-          <el-card><i class="el-icon-plus"></i>创建接口</el-card>
+          <el-card><i class="el-icon-plus"></i>Create an interface</el-card>
         </li>
         <li class="add-api">
           <el-card>
@@ -14,7 +14,7 @@
           </el-card>
         </li>
       </template>
-      <li class="empty">暂无接口</li>
+      <li class="empty">No interface yet</li>
     </ul>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
 <el-dialog class="import-json-check"
-     title="解析Json成功，请核对"
+     title="JSON parse success"
      :visible.sync="dialogVisible"
      size="small">
   <div class="import-apis">
@@ -12,16 +12,16 @@
         <ul>
           <li v-for="(api, idx) in item.apis" :key="idx" class="api">
             <span class="name">{{api.name}}</span>
-            <span class="control preview" @click="preview(index, idx)">预览</span>
-            <span class="control delete" @click="deleteApi(index, idx)">删除</span>
+            <span class="control preview" @click="preview(index, idx)">Preview</span>
+            <span class="control delete" @click="deleteApi(index, idx)">Delete</span>
           </li>
         </ul>
       </el-tab-pane>
     </el-tabs>
   </div>
   <span slot="footer" class="dialog-footer">
-  <el-button @click="dialogVisible = false">取 消</el-button>
-  <el-button type="primary" @click="handleConfirm">保 存</el-button>
+  <el-button @click="dialogVisible = false">Cancel</el-button>
+  <el-button type="primary" @click="handleConfirm">Save</el-button>
   </span>
 </el-dialog>
 </template>

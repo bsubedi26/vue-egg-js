@@ -3,7 +3,7 @@
     <li class="record" v-for="record in records" :key="record._id" @click="recover(record)">
       <span class="time">{{record.createTime | dateFormat}}</span>
       <span class="name">{{record.operatorName}}</span>
-      <span class="recover">加载</span>
+      <span class="recover">Load</span>
     </li>
   </ul>
 </template>

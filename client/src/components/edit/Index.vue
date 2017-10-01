@@ -46,7 +46,7 @@ export default {
         this.getApi(this.$route.params).then(() => {
           this.endLoading()
         }).catch(err => {
-          this.$message.error(`获取数据失败:${err.msg}`)
+          this.$message.error(`GET data from Api failed: ${err.msg}`)
           this.loadingFail = true
           this.endLoading()
         })
@@ -61,9 +61,9 @@ export default {
   },
   beforeRouteLeave (to, from, next) {
     if (this.apiUnsaved) {
-      this.$confirm('有未保存的内容, 是否离开?', '提示', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
+      this.$confirm('Unsaved content, Are you sure you want to leave?', 'prompt', {
+        confirmButtonText: 'Yes',
+        cancelButtonText: 'Cancel',
         type: 'warning'
       }).then(() => {
         next()

@@ -2,15 +2,15 @@
   <div class="url-box">
     <el-row type="flex">
       <el-col :span="24">
-        <el-input placeholder="Url保存后自动生成" readonly v-model="url">
-          <el-select v-model="method" slot="prepend" placeholder="请选择">
+        <el-input placeholder="Url is automatically generated after saving" v-model="url">
+          <el-select v-model="method" slot="prepend" placeholder="Please Select">
             <el-option label="GET" value="get"></el-option>
             <el-option label="POST" value="post"></el-option>
             <el-option label="PUT" value="put"></el-option>
             <el-option label="PATCH" value="patch"></el-option>
             <el-option label="DELETE" value="delete"></el-option>
           </el-select>
-          <copy-button slot="append" :copy-data="url" :disabled="creating">复制</copy-button>
+          <copy-button slot="append" :copy-data="url" :disabled="creating">Copy</copy-button>
         </el-input>
       </el-col>
       <el-col class="control">
@@ -22,25 +22,25 @@
             @click="send()"
             @command="updateTestMode"
             v-if="prodUrl || devUrl">
-            测试
+            Test
             <el-dropdown-menu slot="dropdown">
               <el-dropdown-item
                 :command="m"
                 v-for="(m, idx) in testModes"
                 :key="idx"
                 v-if="m !== testMode && getTestUrl(m)">
-                测试{{m}}
+                Test{{m}}
               </el-dropdown-item>
             </el-dropdown-menu>
           </el-dropdown>
-          <el-button id="editAct" type="success" @click="send()" v-else>测试</el-button>
+          <el-button id="editAct" type="success" @click="send()" v-else>Test</el-button>
         </template>
       </el-col>
       <el-col class="mode" v-if="api._id">
-        <el-select v-model="mode" placeholder="请选择" >
-          <el-option label="编辑模式" value="edit"></el-option>
-          <el-option label="测试模式" value="test"></el-option>
-          <el-option label="文档模式"
+        <el-select v-model="mode" placeholder="Please Select" >
+          <el-option label="Edit" value="edit"></el-option>
+          <el-option label="Test" value="test"></el-option>
+          <el-option label="Document"
                      value="doc"
                      class="doc"
                      @click.native="showDoc"

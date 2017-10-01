@@ -1,54 +1,51 @@
 <template>
   <div class="api-info el-col" v-side-bar>
     <el-form>
-      <el-form-item label="接口名称" class="required">
+      <el-form-item label="Name" class="required">
         <el-input auto-complete="off" v-model="name"></el-input>
       </el-form-item>
-      <el-form-item label="接口分组" class="required">
+      <el-form-item label="Groups" class="required">
         <i class="el-icon-plus title-icon create-group" @click="showCreateGroup = true"></i>
         <div class="group-select">
-          <el-row type="flex" >
+          <el-row type="flex">
             <el-col :span="24">
-              <el-select placeholder="请选择分组" filterable v-model="group">
-                <el-option v-for="group in groups"
-                           :key="group._id"
-                           :label="group.name"
-                           :value="group._id">
+              <el-select placeholder="Select Group" filterable v-model="group">
+                <el-option v-for="group in groups" :key="group._id" :label="group.name" :value="group._id">
                 </el-option>
               </el-select>
             </el-col>
           </el-row>
         </div>
       </el-form-item>
-      <el-form-item label="测试地址">
-        <el-input auto-complete="off" v-model="devUrl" placeholder="请填写绝对路径"></el-input>
+      <el-form-item label="Test Address">
+        <el-input auto-complete="off" v-model="devUrl" placeholder="Please provide absolute path"></el-input>
       </el-form-item>
-      <el-form-item label="线上地址">
-        <el-input auto-complete="off" v-model="prodUrl" placeholder="请填写绝对路径"></el-input>
+      <el-form-item label="Online Address">
+        <el-input auto-complete="off" v-model="prodUrl" placeholder="Please provide absolute path"></el-input>
       </el-form-item>
-      <el-form-item label="代理转发">
+      <el-form-item label="Proxy Forwarding">
         <el-tooltip placement="top" popper-class="api-proxy-tip">
           <span class="mocker-tip">?</span>
           <div slot="content">
-            <p>开启后请求mock地址会转发到指定地址，除此外，为便于前端代码控制，也可以在请求Mock URL时，带上query参数来设置：</p>
-            <p>转发线上：{ mockURL }?_mockProxyStatus=1</p>
-            <p>转发测试：{ mockURL }?_mockProxyStatus=2</p>
+            <p>
+              After opening the request mock address will be forwarded to the specified address, in addition, in order to facilitate the front-end code control, you can also request the Mock URL, with query parameters to set:
+            </p>
+            <p>Forward line: { mockURL }?_mockProxyStatus=1</p>
+            <p>Forward test: { mockURL }?_mockProxyStatus=2</p>
+
           </div>
         </el-tooltip>
         <el-radio-group v-model="proxyMode">
-          <el-radio :label="0">不转发</el-radio>
-          <el-radio :label="1">转发线上</el-radio>
-          <el-radio :label="2">转发测试</el-radio>
+          <el-radio :label="0">Do not forward</el-radio>
+          <el-radio :label="1">Forward line</el-radio>
+          <el-radio :label="2">Forward test</el-radio>
         </el-radio-group>
       </el-form-item>
-      <el-form-item label="历史记录" class="history-item" v-if="history && history.records.length">
+      <el-form-item label="History" class="history-item" v-if="history && history.records.length">
         <api-history :history="history"></api-history>
       </el-form-item>
     </el-form>
-    <create-group
-      :visited="showCreateGroup"
-      @action="handleClickCreateGroup"
-      @close="handleClickClose"/>
+    <create-group :visited="showCreateGroup" @action="handleClickCreateGroup" @close="handleClickClose" />
   </div>
 </template>
 
@@ -136,6 +133,7 @@ export default {
 .api-proxy-tip {
   width: 450px;
 }
+
 .api-info {
   padding: 20px;
   width: 288px;
@@ -145,8 +143,7 @@ export default {
   .el-textarea__inner,
   .el-input__inner {
     background-color: #F9FAFC;
-  }
-  // 防止创建分组的输入框背景色被覆盖
+  } // 防止创建分组的输入框背景色被覆盖
   .create-group-dialog .el-input__inner {
     background-color: #fff;
   }
@@ -211,5 +208,4 @@ export default {
   color: #ff4949;
   margin-left: 2px;
 }
-
 </style>

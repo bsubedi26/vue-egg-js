@@ -35,7 +35,7 @@ export default {
   mounted () {
     this.windowWidth = document.body.clientWidth
     // Temporarily useless
-    // window.addEventListener('resize', this.windowResize);
+    window.addEventListener('resize', this.windowResize)
     this.$store.dispatch('getUser').then(() => {
       this.$store.dispatch('getGroups')
     }).catch(() => {

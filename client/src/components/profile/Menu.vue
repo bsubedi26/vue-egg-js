@@ -2,9 +2,9 @@
 <div class="profile-menu" v-if="user">
   <div class="name"><span>{{user.name}}</span> <i class="el-icon-caret-bottom"></i></div>
   <div class="profile-nav">
-    <router-link :to="profileRoute">个人信息</router-link>
-    <router-link :to="manageRoute">接口管理</router-link>
-    <a href="javascript:;" @click="logout">注销登录</a>
+    <router-link :to="profileRoute">Profile</router-link>
+    <router-link :to="manageRoute">Management</router-link>
+    <a href="javascript:;" @click="logout">Logout</a>
   </div>
 </div>
 </template>
@@ -27,7 +27,7 @@ export default {
         this.$router.push({
           name: 'Login'
         })
-      }).catch(err => this.$message.error(`注销失败：${err.msg}`))
+      }).catch(err => this.$message.error(`Logout Failed：${err.msg}`))
     }
   },
   computed: {

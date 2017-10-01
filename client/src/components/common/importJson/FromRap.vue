@@ -6,7 +6,7 @@
        accept="application/json"
        ref="importRapJson"
        :on-change="importJsonFromRap">
-    <i class="el-icon-upload2"></i>导入Rap Json
+    <i class="el-icon-upload2"></i>Import Rap Json
   </el-upload>
   <success v-if="importSuccess"
       :visible="importSuccess"

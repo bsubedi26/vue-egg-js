@@ -3,7 +3,7 @@
     <el-menu :default-active="$route.params.groupId" class="el-menu-vertical">
       <el-menu-item-group :class="{showSearch: isShowSearch}">
         <template slot="title">
-          <span @click="handleClickGroup">组列表</span>
+          <span @click="handleClickGroup">List Group</span>
           <search @query="onQuery" v-model="query" placeholder="请输入分组名称" size="small" id="search-group"></search>
           <i class="el-icon-plus title-icon" @click="handleClickShowDialog"></i>
           <i class="el-icon-search title-icon" @click="showSearch()"></i>

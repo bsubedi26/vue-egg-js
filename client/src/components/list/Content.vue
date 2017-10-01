@@ -2,7 +2,7 @@
   <el-col :span="24">
     <div class="content-wrap">
       <div id="content">
-        <search @query="onQuery" placeholder="回车搜索：api名称、线上地址、测试地址、接口ID、管理员"></search>
+        <search @query="onQuery" placeholder="Search: api name, online address, test address, interface ID, administrator"></search>
         <api-list></api-list>
         <page-nav :query="query" :total="count" :on-page-nav="onPageNav"></page-nav>
       </div>
@@ -57,7 +57,7 @@ export default {
         const pages = res.data.pages
         this.query.page = pages.page
         this.count = pages.count
-      }).catch(err => this.$message.error(`加载数据失败:${err.msg}`))
+      }).catch(err => this.$message.error(`Loading data failed: ${err.msg}`))
     },
     onPageNav (currentPage) {
       this.query.page = currentPage
